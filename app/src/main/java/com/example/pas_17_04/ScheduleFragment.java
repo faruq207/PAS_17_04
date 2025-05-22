@@ -28,7 +28,7 @@ public class ScheduleFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-        transaction.replace(R.id.child_fragment_container, new PremiereRecycle());
+        transaction.replace(R.id.child_fragment_container, new ScheduleRecycler());
         transaction.commit();
     }
 }
