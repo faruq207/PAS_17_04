@@ -67,11 +67,20 @@ public class ScheduleRecycler extends Fragment {
             public void onResponse(Call<JatwalResponse> call, Response<JatwalResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     Log.d("API_SUCCESS", "Data: " + new Gson().toJson(response.body()));
+                    List<Jatwal> hasil = response.body().getJatwals();
+
                     jatwalList.clear();
-                    jatwalList.addAll(response.body().getJatwals());
+                    if (hasil != null) {
+                        jatwalList.addAll(hasil);
+                    } else {
+                        Log.e("API_RESPONSE", "Jatwals is null");
+                    }
+
                     adapter.notifyDataSetChanged();
                     recyclerView.setVisibility(View.VISIBLE);
                     pbProgress.setVisibility(View.GONE);
+                } else {
+                    Log.e("API_RESPONSE", "Response tidak sukses atau body null");
                 }
             }
 
