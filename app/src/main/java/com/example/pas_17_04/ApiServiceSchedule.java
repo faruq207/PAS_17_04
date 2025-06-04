@@ -5,7 +5,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface ApiServiceSchedule {
-    @GET("3/search_all_teams.php?s=Soccer&c=Spain")
+    @GET("3/eventsseason.php?id=4328&s=2014-2015")
     Call<JatwalResponse> getUsers(@Query("league") String league);
 }
 
