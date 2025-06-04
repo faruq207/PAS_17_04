@@ -79,8 +79,6 @@ public class ScheduleRecycler extends Fragment {
                     adapter.notifyDataSetChanged();
                     recyclerView.setVisibility(View.VISIBLE);
                     pbProgress.setVisibility(View.GONE);
-                } else {
-                    Log.e("API_RESPONSE", "Response tidak sukses atau body null");
                 }
             }
 
