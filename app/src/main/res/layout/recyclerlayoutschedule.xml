@@ -1,35 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginTop="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="17dp"
+    android:background="@color/white"
+    android:layout_marginBottom="10dp">
+
+    <ImageView
+        android:id="@+id/ivforimageview"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="10dp" />
+
     <LinearLayout
-        android:layout_marginTop="10dp"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="17dp"
-        android:background="@color/white"
-        android:layout_marginBottom="10dp">
-
-    <TextView
-        android:id="@+id/tvfilename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="its 12 am lmao why do i procrastinate so much"
-        android:textSize="13sp"
-        android:layout_marginBottom="2dp"
-        android:textColor="#88000000"/>
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvnama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="nama"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        <TextView
+            android:id="@+id/tvfilename"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="its 12 am lmao why do i procrastinate so much"
+            android:textSize="13sp"
+            android:layout_marginBottom="4dp"
+            android:textColor="#88000000"/>
 
-    <TextView
-        android:id="@+id/tvstadium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="stadium"
-        android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/tvnama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nama"
+            android:textSize="18sp"
+            android:layout_marginBottom="5dp" />
+
+        <TextView
+            android:id="@+id/tvstadium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="stadium"
+            android:textSize="14sp"/>
+
     </LinearLayout>
+</LinearLayout>

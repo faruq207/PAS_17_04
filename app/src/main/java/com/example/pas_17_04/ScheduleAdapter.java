@@ -3,10 +3,13 @@ package com.example.pas_17_04;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -36,6 +39,11 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.UserVi
         Jatwal jatwal = jatwalList.get(position);
         holder.tvnama.setText(jatwal.getStrEvent());
         holder.tvstadium.setText(jatwal.getStrSeason());
+        holder.tvfilename.setText(jatwal.getStrFilename());
+
+        Glide.with(holder.itemView.getContext())
+                .load(jatwal.getStrLeagueBadge())
+                .into(holder.ivforimageview);
     }
 
     @Override
@@ -46,11 +54,14 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.UserVi
     public static class UserViewHolder extends RecyclerView.ViewHolder {
         TextView tvnama;
         TextView tvstadium;
-
+        TextView tvfilename;
+        ImageView ivforimageview;
         public UserViewHolder(View view) {
             super(view);
             tvnama = view.findViewById(R.id.tvnama);
             tvstadium = view.findViewById(R.id.tvstadium);
+            tvfilename = view.findViewById(R.id.tvfilename);
+            ivforimageview = view.findViewById(R.id.ivforimageview);
         }
     }
 }
