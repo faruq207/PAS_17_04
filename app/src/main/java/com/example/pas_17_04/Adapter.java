@@ -3,10 +3,13 @@
     import android.view.LayoutInflater;
     import android.view.View;
     import android.view.ViewGroup;
+    import android.widget.ImageView;
     import android.widget.TextView;
 
     import androidx.annotation.NonNull;
     import androidx.recyclerview.widget.RecyclerView;
+
+    import com.bumptech.glide.Glide;
 
     import java.util.List;
 
@@ -36,6 +39,10 @@
             Team team = userList.get(position);
             holder.tvnama.setText(team.getStrTeam());
             holder.tvstadium.setText(team.getStrStadium());
+
+            Glide.with(holder.itemView.getContext())
+                    .load(team.getStrBadge())
+                    .into(holder.picture);
         }
 
         @Override
@@ -46,11 +53,13 @@
         public static class UserViewHolder extends RecyclerView.ViewHolder {
             TextView tvnama;
             TextView tvstadium;
+            ImageView picture;
 
             public UserViewHolder(View view) {
                 super(view);
                 tvnama = view.findViewById(R.id.tvnama);
                 tvstadium = view.findViewById(R.id.tvstadium);
+                picture = view.findViewById(R.id.picture);
             }
         }
     }
